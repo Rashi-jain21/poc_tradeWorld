@@ -62,16 +62,18 @@ function App() {
         backgroundColor={backgroundStyle.backgroundColor}
       />
       {showFirstScreen ? (
-        <ScrollView pinchGestureEnabled>
-          <ImageMapper
-            imgHeight={1500}
-            imgWidth={500}
-            imgSource={imageSource}
-            imgMap={MAPPING}
-            onPress={(item, idx, event) => onAnyAreaPress(item, idx, event)}
-            containerStyle={{borderColor: 'green', borderWidth: 1, flex: 1}}
-            selectedAreaId="my_area_id"
-          />
+        <ScrollView>
+          <ScrollView horizontal>
+            <ImageMapper
+              imgHeight={1500}
+              imgWidth={1500}
+              imgSource={imageSource}
+              imgMap={MAPPING}
+              onPress={(item, idx, event) => onAnyAreaPress(item, idx, event)}
+              containerStyle={{borderColor: 'green', borderWidth: 1, flex: 1}}
+              selectedAreaId="my_area_id"
+            />
+          </ScrollView>
         </ScrollView>
       ) : (
         <App1 onPress={setShowFirstScreen} />
